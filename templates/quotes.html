@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .quote-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .quote-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Quotes</h1>
+    <ul class="quote-list">
+        {% for quote in quotes %}
+            <li class="quote-item">
+                {{ quote }}
+                <a href="{{ url_for('delete_quote', index=loop.index0) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_quote') }}">Add a New Quote</a>
+    <br>
+    <a href="{{ url_for('home') }}">Random Quote</a>
+</body>
+</html>
