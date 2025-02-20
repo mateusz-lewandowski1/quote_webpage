@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Quote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Quote</h1>
+    <form method="POST">
+        <textarea name="quote" rows="4" cols="50" placeholder="Enter your quote here..." required></textarea><br>
+        <button type="submit">Add Quote</button>
+    </form>
+    <br>
+    <a href="{{ url_for('show_quotes') }}">View All Quotes</a>
+    <br>
+    <a href="{{ url_for('home') }}">Random Quote</a>
+</body>
+</html>
